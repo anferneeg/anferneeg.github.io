@@ -11,7 +11,7 @@ $(document).ready(function () {
 		autoplay: true,
 		loop: true,
 		volume: 0.1,
-		mute: true,
+		mute: false,
 	});
 
 	// mute and hide music on icon and show music off icon
