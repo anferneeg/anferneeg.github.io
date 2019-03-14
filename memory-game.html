@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>We Memory Game</title>
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<link rel="stylesheet" href="css/styles.css">
+	<link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina|Fredoka+One|Jua" rel="stylesheet">
+
+</head>
+
+<body>
+	<div class="preloader-wrapper">
+		<div class="loader-container">
+			<img class="preloader-bears-walk" src="./img/bears_walk_cycle.gif" width="400">
+			<div class="loader-wrapper">
+				<div class="loading">Loading</div>
+				<div class="loader-dot"></div>
+				<div class="loader-dot"></div>
+				<div class="loader-dot"></div>
+			</div>
+		</div>
+		<div class="transition"></div>
+	</div>
+	<div class="overlay game-pause">
+		<div class="game-pause-modal">
+			<h1>Game Pause</h1>
+			<div class="game-pause-icon-container">
+				<div class="game-pause-icon-wrapper">
+					<img src="./img/btn_play-btn.svg" width="80" height="80" class="pause-play-btn-icon">
+					<p>CONTINUE</p>
+				</div>
+				<div class="game-pause-icon-wrapper">
+					<img id="music-off-icon" src="./img/btn_music-off-btn.svg" width="80" height="80" class="pause-game-mucis-off">
+					<img id="music-on-icon" src="./img/btn_music-on-btn.svg" width="80" height="80" class="pause-game-mucis-on">
+					<p>MUTE</p>
+				</div>
+				<div class="game-pause-icon-wrapper">
+					<img src="./img/btn_credit-btn.svg" width="80" height="80" class="pause-credit-icon">
+					<p>CREDITS</p>
+				</div>
+				<div class="game-pause-icon-wrapper">
+					<img src="./img/btn_close_btn.svg" width="80" height="80" class="pause-close-btn">
+					<p>QUIT</p>
+				</div>
+			</div>
+			<div>CHANGE THEME COLOR</div>
+			<div class="game-pause-color-wrapper">
+				<div class="game-pause-color neon-green"></div>
+				<div class="game-pause-color light-blue"></div>
+				<div class="game-pause-color yellow"></div>
+				<div class="game-pause-color pink"></div>
+				<div class="game-pause-color blue"></div>
+				<div class="game-pause-color dark-orange"></div>
+			</div>
+		</div>
+	</div>
+	<div class="overlay intro">
+		<div class="modal-wrapper intro">
+			<img src="./img/we-bare-bear-logo.png" sizes="100vw" class="we-bare-bears">
+			<img src="./img/card-game.png" sizes="100vw" class="card-game">
+			<img src="./img/3-bear.png" sizes="100vw" class="three-bear">
+			<div id="start" class="btn start rg_btn" data-rg="btnsr">
+				<div>Start game</div>
+			</div>
+		</div>
+	</div>
+	<div class="overlay won">
+		<div class="modal-wrapper won">
+			<h1>HOORAY!!</h1>
+			<h2>You Won</h2>
+			<p>You've matched the cards at a rate of</p>
+			<div class="percent"></div>
+			<img src="./img/ice-bear-dance3.gif" sizes="100vw" class="congrats-img">
+			<div class="btn game-over ">
+				<div class="reload">Game Over</div>
+			</div>
+		</div>
+	</div>
+	<div class="overlay credit">
+		<div class="modal-wrapper credit">
+			<div class="close">
+				<img src="./img/close-icon.svg" sizes="100vw">
+			</div>
+			<h1>CREDITS</h1>
+			<div class="credit-wrapper">
+				<h2>Developer</h2>
+				<h3>Tony Grant</h3>
+			</div>
+			<div class="credit-wrapper">
+				<h2>Project manager</h2>
+				<h3>Tony Grant</h3>
+			</div>
+			<div class="credit-wrapper">
+				<h2>Designer</h2>
+				<h3>Tony Grant</h3>
+			</div>
+
+			<div class="credit-container">
+				<div>
+					<h2>Spcial thanks</h2>
+				</div>
+				<div class="credit-wrapper special-thanks">
+					<div>
+						<h3>Jenny Veens</h3>
+						<h3>Hallan Patrick</h3>
+						<h3>Dylan On</h3>
+						<h3>HackerYou</h3>
+					</div>
+					<div>
+						<h3>Maren Sigson</h3>
+						<h3>Myles Grant</h3>
+						<h3>Jessica (My wife)</h3>
+						<h3>Google.com</h3>
+					</div>
+				</div>
+			</div>
+			<div class="credit-container">
+				<div>
+					<h2>Special Dedication</h2>
+				</div>
+				<div class="credit-wrapper special-thanks">
+					<div>
+						<h3>To my son Zion</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<header>
+			<div class="logo">
+				<div class="menu">
+					<div class="menu-wrapper">
+						<img id="menu" src="./img/btn_pause-btn.svg" id="menu-icon" class="icon">
+					</div>
+				</div>
+			</div>
+			<div class="status">
+				<div class="attempts">Attepts
+					<span>0</span>
+				</div>
+				<div class="cards-matched">Matched
+					<span>0</span>
+				</div>
+			</div>
+		</header>
+		<div class="memory-card-wrapper">
+			<div class="row ">
+
+				<div class="card-container">
+					<div class="memory-card" data-name="ralph">
+						<div class="front-face ralph"></div>
+						<div class="back-face"></div>
+					</div>
+				</div>
+
+				<div class="card-container">
+					<div class="memory-card" data-name="ralph">
+						<div class="front-face ralph"></div>
+						<div class="back-face"></div>
+					</div>
+				</div>
+				<div class="card-container">
+					<div class="memory-card" data-name="yuri">
+						<div class="front-face yuri"></div>
+						<div class="back-face"></div>
+					</div>
+				</div>
+				<div class="card-container">
+					<div class="memory-card" data-name="yuri">
+						<div class="front-face yuri"></div>
+						<div class="back-face"></div>
+					</div>
+				</div>
+				<div class="card-container">
+					<div class="memory-card" data-name="ranger">
+						<div class="front-face ranger-tabes"></div>
+						<div class="back-face"></div>
+					</div>
+				</div>
+				<div class="card-container">
+					<div class="memory-card" data-name="ranger">
+						<div class="front-face ranger-tabes"></div>
+						<div class="back-face"></div>
+					</div>
+				</div>
+				<div class="card-container">
+					<div class="memory-card" data-name="panda-bear">
+						<div class="front-face panda-bear"></div>
+						<div class="back-face"></div>
+					</div>
+				</div>
+				<div class="card-container">
+					<div class="memory-card" data-name="panda-bear">
+						<div class="front-face panda-bear"></div>
+						<div class="back-face"></div>
+					</div>
+				</div>
+
+
+				<div class="card-container">
+					<div class="memory-card" data-name="nom-nom">
+						<div class="front-face nom-nom"></div>
+						<div class="back-face"></div>
+					</div>
+				</div>
+				<div class="card-container">
+					<div class="memory-card" data-name="nom-nom">
+						<div class="front-face nom-nom"></div>
+						<div class="back-face"></div>
+					</div>
+				</div>
+				<div class="card-container">
+					<div class="memory-card" data-name="ice-bear">
+						<div class="front-face ice-bear"></div>
+						<div class="back-face"></div>
+					</div>
+				</div>
+				<div class="card-container">
+					<div class="memory-card" data-name="ice-bear">
+						<div class="front-face ice-bear"></div>
+						<div class="back-face"></div>
+					</div>
+				</div>
+				<div class="card-container">
+					<div class="memory-card" data-name="lucy">
+						<div class="front-face lucy"></div>
+						<div class="back-face"></div>
+					</div>
+				</div>
+				<div class="card-container">
+					<div class="memory-card" data-name="lucy">
+						<div class="front-face lucy"></div>
+						<div class="back-face"></div>
+					</div>
+				</div>
+				<div class="card-container">
+					<div class="memory-card" data-name="demon">
+						<div class="front-face demon"></div>
+						<div class="back-face"></div>
+					</div>
+				</div>
+				<div class="card-container">
+					<div class="memory-card" data-name="demon">
+						<div class="front-face demon"></div>
+						<div class="back-face"></div>
+					</div>
+				</div>
+
+
+				<div class="card-container">
+					<div class="memory-card" data-name="baby-grizz">
+						<div class="front-face baby-grizz"></div>
+						<div class="back-face"></div>
+					</div>
+				</div>
+				<div class="card-container">
+					<div class="memory-card" data-name="baby-grizz">
+						<div class="front-face baby-grizz"></div>
+						<div class="back-face"></div>
+					</div>
+				</div>
+				<div class="card-container">
+					<div class="memory-card" data-name="chloe">
+						<div class="front-face chloe"></div>
+						<div class="back-face"></div>
+					</div>
+				</div>
+				<div class="card-container">
+					<div class="memory-card" data-name="chloe">
+						<div class="front-face chloe"></div>
+						<div class="back-face"></div>
+					</div>
+				</div>
+				<div class="card-container">
+					<div class="memory-card" data-name="charlie">
+						<div class="front-face charlie"></div>
+						<div class="back-face"></div>
+					</div>
+				</div>
+				<div class="card-container">
+					<div class="memory-card" data-name="charlie">
+						<div class="front-face charlie"></div>
+						<div class="back-face"></div>
+					</div>
+				</div>
+				<div class="card-container">
+					<div class="memory-card" data-name="grizz">
+						<div class="front-face grizz"></div>
+						<div class="back-face"></div>
+					</div>
+				</div>
+				<div class="card-container">
+					<div class="memory-card" data-name="grizz">
+						<div class="front-face grizz"></div>
+						<div class="back-face"></div>
+					</div>
+				</div>
+
+
+				<div class="card-container">
+					<div class="memory-card" data-name="hamster">
+						<div class="front-face hamster"></div>
+						<div class="back-face"></div>
+					</div>
+				</div>
+				<div class="card-container">
+					<div class="memory-card" data-name="hamster">
+						<div class="front-face hamster"></div>
+						<div class="back-face"></div>
+					</div>
+				</div>
+				<div class="card-container">
+					<div class="memory-card" data-name="baby-ice-bear">
+						<div class="front-face baby-ice-bear"></div>
+						<div class="back-face"></div>
+					</div>
+				</div>
+				<div class="card-container">
+					<div class="memory-card" data-name="baby-ice-bear">
+						<div class="front-face baby-ice-bear"></div>
+						<div class="back-face"></div>
+					</div>
+				</div>
+				<div class="card-container">
+					<div class="memory-card" data-name="baby-panda-bear">
+						<div class="front-face baby-panda-bear"></div>
+						<div class="back-face"></div>
+					</div>
+				</div>
+				<div class="card-container">
+					<div class="memory-card" data-name="baby-panda-bear">
+						<div class="front-face baby-panda-bear"></div>
+						<div class="back-face"></div>
+					</div>
+				</div>
+				<div class="card-container">
+					<div class="memory-card" data-name="all-bears">
+						<div class="front-face all-bears"></div>
+						<div class="back-face"></div>
+					</div>
+				</div>
+				<div class="card-container">
+					<div class="memory-card" data-name="all-bears">
+						<div class="front-face all-bears"></div>
+						<div class="back-face"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<audio id="correct-answer-sound" src="asset/correct-answer.mp3"></audio>
+		<audio id="incorrect-answer-sound" src="asset/failure.wav"></audio>
+	</div>
+
+
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.core.min.js"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>  -->
+	<script src="./js/jquery-3.3.1.min.js"></script>
+	<script src="./js/anime.min.js"></script>
+	<script src="./js/animation.js"></script>
+	<script src="./js/audio.js"></script>
+	<script src="./js/main.js"></script>
+
+</body>
+
+</html>
