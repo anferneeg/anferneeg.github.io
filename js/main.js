@@ -1,4 +1,3 @@
-// import {incorrecAnswer} from './audio'; // or './module'
 // Memory card game//
 
 // OBJECTIVE - User has to select 2 cards to a match a pair. Once all pairs have been selected user has won the game

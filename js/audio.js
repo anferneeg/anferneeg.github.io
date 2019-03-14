@@ -28,21 +28,4 @@ $(document).ready(function () {
 		$("img#music-off-icon").hide();
 	}
 
-	// $(function incorrecAnswer() {
-
-	// 	var incorrectSoundEffect = new Howl({
-	// 		src: ['./asset/failure.wav'],
-	// 		autoplay: false,
-	// 		loop: false,
-	// 		volume: 0.1,
-	// 		mute:false,
-	// 		onend: function() {
-	// 			console.log('Failure Finished!');
-	// 		}
-	// 	});
-	// 	incorrectSoundEffect.play();
-
-	// });
-
-
 });
