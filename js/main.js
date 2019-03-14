@@ -101,10 +101,6 @@ $(document).ready(function () {
 		});
 	});
 
-	// Flip card when Start button is clicked
-	$('#start').on('click', function () {
-		// $(".memory-card").addClass("flip");
-	});
 
 	//Shuffle cards
 	function Shuffle(items) {
@@ -143,7 +139,7 @@ $(document).ready(function () {
 	}
 
 	// Reload Game
-	$('.pause-close-btn').on('click', function () {
+	$('.btn.game-over').on('click', function () {
 		location.reload();
 		console.log('Reload was clicked');
 	});

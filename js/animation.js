@@ -159,8 +159,6 @@ $(document).ready(function () {
 
   });
 
-
-
 });
 
 // Animate you won modal wrapper
