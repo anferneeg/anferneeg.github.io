@@ -139,10 +139,13 @@ $(document).ready(function () {
 	}
 
 	// Reload Game
-	$('.btn.game-over').on('click', function () {
+	$('.btn.game-over, .pause-close-btn').on('click', function () {
 		location.reload();
 		console.log('Reload was clicked');
 	});
+
+
+
 
 	// Hide intro screen when button is clicked
 	$('#start').on('click', function () {
