@@ -2,8 +2,9 @@ $(document).ready(function () {
 
 	const playBtn = document.querySelector('img#music-off-icon');
 	const muteBtn = document.querySelector('img#music-on-icon');
+	const soundEffectIncorrect = document.getElementById('incorrect-answer-sound');
+	const soundEffectCorrect = document.getElementById('correct-answer-sound');
 	let id;
-
 
 	// Play background music
 	var bgSound = new Howl({
@@ -19,6 +20,8 @@ $(document).ready(function () {
 		bgSound.pause(id);
 		$("img#music-on-icon").hide();
 		$("img#music-off-icon").show();
+		soundEffectIncorrect.muted = true;
+		soundEffectCorrect.muted = true;
 	}
 
 	// play and hide music off icon and show music on icon
@@ -26,6 +29,20 @@ $(document).ready(function () {
 		bgSound.play(id);
 		$("img#music-on-icon").show();
 		$("img#music-off-icon").hide();
+		soundEffectIncorrect.muted = false;
+		soundEffectCorrect.muted = false;
 	}
+
+
+	// // mute incorrect and correct sound effect
+	// muteBtn.onclick = function pauseSoundEffect() {
+	// 	soundEffect.pause();
+	// 	console.log('pause sound effect')
+	// }
+
+	// muteBtn.onclick = function pauseSoundEffect() {
+	// 	soundEffect.play('play sound effect');
+	// }
+
 
 });
