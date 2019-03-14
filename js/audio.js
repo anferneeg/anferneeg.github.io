@@ -34,15 +34,4 @@ $(document).ready(function () {
 	}
 
 
-	// // mute incorrect and correct sound effect
-	// muteBtn.onclick = function pauseSoundEffect() {
-	// 	soundEffect.pause();
-	// 	console.log('pause sound effect')
-	// }
-
-	// muteBtn.onclick = function pauseSoundEffect() {
-	// 	soundEffect.play('play sound effect');
-	// }
-
-
 });
