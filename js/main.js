@@ -145,8 +145,6 @@ $(document).ready(function () {
 	});
 
 
-
-
 	// Hide intro screen when button is clicked
 	$('#start').on('click', function () {
 		$('.overlay.intro').css({
@@ -172,7 +170,7 @@ $(document).ready(function () {
 		$(this).on('click', function () {
 
 			const $theme = $('.game-pause-color');
-			const $themeItems = $('.container, .overlay.intro, body, .transition, .game-pause-modal');
+			const $themeItems = $('.container, .overlay.intro, body, .transition, .game-pause-modal, .quit-game-modal');
 
 			$('.neon-green').on('click', function () {
 				$themeItems.css('background-color', colors[0]);
