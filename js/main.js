@@ -12,7 +12,7 @@ let $cards = $('.memory-card');
 // Generate Random Bg Color
 let colors = ['#dcfc82', '#b5cef8', '#ffd461', '#eb9ea6', '#8ad0e4', '#ffb075'];
 let rand = Math.floor(Math.random() * colors.length);
-$('.container, .overlay.intro, body, .transition, .game-pause-modal').css('background-color', colors[rand]);
+$('.container, .overlay.intro, body, .transition, .game-pause-modal, .quit-game-modal').css('background-color', colors[rand]);
 
 
 $(document).ready(function () {
@@ -139,7 +139,7 @@ $(document).ready(function () {
 	}
 
 	// Reload Game
-	$('.btn.game-over, .pause-close-btn').on('click', function () {
+	$('.btn.game-over, .quit-game-btn-icon').on('click', function () {
 		location.reload();
 		console.log('Reload was clicked');
 	});

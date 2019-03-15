@@ -92,8 +92,44 @@ $(document).ready(function () {
     });
 
     //Hide credit modal window when x buttton is clicked
-    $('.pause-play-btn-icon').on("click", function () {
+    $('.pause-play-btn-icon, .game-pause-modal .close ').on("click", function () {
       $('.overlay.game-pause').css("display", "none");
+    });
+
+    //Hide Quit background when credit buttton is clicked
+    $('.pause-close-btn').on("click", function () {
+      $('.overlay.quit-game').css("display", "flex");
+      console.log('show credit button was clicked');
+    });
+
+  });
+
+  //Animate Quit container transition in
+  $(function showQuit() {
+    anime({
+      targets: '.overlay.quit-game',
+      display: 'flex',
+      autoplay: false, //if you don't want play animation on page load
+    });
+    anime({
+      targets: '.quit-game-modal',
+      translateY: [250, 0],
+      duration: 1000,
+      opacity: [0, 1],
+      delay: 200,
+      //autoplay: false, //if you don't want play animation on page load
+    });
+
+
+    //Hide Quit modal window and Pause modal when play buttton is clicked
+    $('.quit-play-game-btn-icon').on("click", function () {
+      $('.overlay.game-pause, .overlay.quit-game').css("display", "none");
+      console.log('play button')
+    });
+
+    //Hide Quit modal window when x buttton is clicked
+    $('.quit-game-btn-icon').on("click", function () {
+      $('.overlay.quit-game, .overlay.game-pause').css("display", "none");
     });
 
   });
