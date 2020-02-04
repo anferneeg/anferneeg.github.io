@@ -96,7 +96,7 @@ header {
     border: 1px solid #312a18;
     border-radius: 10px;
     box-shadow: 0 2px 1px 1px rgba(0, 0, 0, .11);
-    backface-visibility: hidden;
+    /*backface-visibility: hidden;*/
     perspective-origin: 50% 50%;
     transform: perspective(805px) rotate(0deg);
     transform-origin: 50% 50%;
