@@ -77,7 +77,7 @@ header {
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    padding: 0 0 31px 0;
+    padding: 0 0 20px 0;
 }
 
 .card-container {
@@ -461,7 +461,7 @@ header {
 }
 
 .menu-wrapper img {
-    padding: 0 25% 0 0;
+    padding: 10px 25% 0 0;
 }
 
 .menu-wrapper img:hover {
